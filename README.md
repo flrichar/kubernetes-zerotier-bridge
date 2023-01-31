@@ -35,7 +35,7 @@ metadata:
   name: kubernetes-zerotier-bridge
 spec:
   containers:
-    - name: ubernetes-zerotier-bridge
+    - name: kubernetes-zerotier-bridge
       image: << your registry >>
       env:
       - name: NETWORK_IDS
