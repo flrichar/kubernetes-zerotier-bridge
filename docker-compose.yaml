@@ -1,0 +1,19 @@
+version: '3'
+services:
+  zt:
+##    environment:
+##      - NETWORK_IDS=A....B,C.......D,E.......F
+##      - ZTAUTHTOKEN=A.......................Z
+##      - AUTOJOIN=true
+##      - ZTHOSTNAME=dummyhostname
+    container_name: zerotier
+    image: flrichar/k8s-ztbridge:1102
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /var/lib/zerotier-one:/var/lib/zerotier-one
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    devices: 
+      - /dev/net/tun
